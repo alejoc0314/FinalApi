@@ -18,14 +18,8 @@ const pedidoGetOne = async (req, res = response) => {
 const pedidoPost = async (req, res = response) => {
     const body = req.body;
     try {
-        const ultimoPedido = await Pedido.findOne({}, {}, { sort: { numeroPedido: -1 } });
-        let ultimoNumeroPedido = 1; 
-        if (ultimoPedido) {
-            ultimoNumeroPedido = ultimoPedido.numeroPedido;
-        }
         const pedido = new Pedido({
             ...body,
-            numeroPedido: ultimoNumeroPedido + 1
         });
         await pedido.save();
         return res.json({
