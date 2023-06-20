@@ -56,16 +56,16 @@ const ventaPut = async (req, res = response) => {
 const ventaDelete = async (req, res = response) => {
     const { _id } = req.query;
     try {
-        const ventaEliminada = await Venta.findOneAndDelete({ _id });
+        const ventaEliminada = await Venta.findOneAndDelete({ _id: req.body._id });
         if (!ventaEliminada) {
             return res.status(404).json({ respuesta: 'Venta no encontrada.' });
         };
         return res.json({ 
-            respuesta: 'Venta eliminada exitosamente.', 
+            respuesta: 'Venta anulada exitosamente.', 
             ventaEliminada
         });
     } catch (error) {
-        return res.status(500).json({ respuesta: 'Error en el servidor al eliminar la Venta.' });
+        return res.status(500).json({ respuesta: 'Error en el servidor al anular la Venta.' });
     };
 };
 

@@ -67,11 +67,11 @@ const pedidoDelete = async (req, res = response) => {
             return res.status(404).json({ respuesta: 'Pedido no encontrado.' });
         };
         return res.json({
-            respuesta: 'Pedido eliminado exitosamente.',
+            respuesta: 'Pedido anulado exitosamente.',
             pedidoEliminado
         });
     } catch (error) {
-        return res.status(500).json({ respuesta: 'Error en el servidor al eliminar el Pedido.' });
+        return res.status(500).json({ respuesta: 'Error en el servidor al anular el Pedido.' });
     };
 };
 
