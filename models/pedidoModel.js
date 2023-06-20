@@ -4,6 +4,8 @@ const PedidoSchema = Schema({
     numeroPedido: {
         type: Number,
         required: [true, 'El campo "Numero pedido" es obligatorio'],
+        unique: true,
+        autoIncrement: true,
     },
     cliente: {
         type: String,
