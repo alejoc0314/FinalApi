@@ -9,13 +9,12 @@ class Server {
     this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use(cors({
-      origin: 'http://localhost:8081'
+      origin: 'https://finalhbs.onrender.com'
     }))
     this.port = process.env.PORT;
     this.rolPath = '/api/rol';
     this.pedidoPath = '/api/pedido';
     this.ventaPath = '/api/venta';
-    this.contadorPath = '/api/contador';
     this.routes();
     this.middlewares();
     this.conectarDB();
