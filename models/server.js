@@ -15,6 +15,7 @@ class Server {
     this.rolPath = '/api/rol';
     this.pedidoPath = '/api/pedido';
     this.ventaPath = '/api/venta';
+    this.contadorPath = '/api/contador';
     this.routes();
     this.middlewares();
     this.conectarDB();
