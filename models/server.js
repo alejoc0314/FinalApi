@@ -9,8 +9,11 @@ class Server {
     this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use(cors({
-      origin: 'https://finalhbs.onrender.com'
-    }))
+      origin: [
+        'https://finalhbs.onrender.com',
+        'http://localhost:8081'
+      ]
+    }));
     this.port = process.env.PORT;
     this.rolPath = '/api/rol';
     this.pedidoPath = '/api/pedido';
