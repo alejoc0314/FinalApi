@@ -10,7 +10,7 @@ route.get('/getOne', pedidoGetOne);
 
 route.post('/', pedidoPost);
 
-route.put('/:_id', pedidoPut);
+route.put('/', pedidoPut);
 
 route.delete('/', pedidoDelete);
 
